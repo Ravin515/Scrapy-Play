@@ -25,11 +25,23 @@
     <Compile Include="crawler\middlewares.py" />
     <Compile Include="crawler\pipelines.py" />
     <Compile Include="crawler\settings.py" />
+    <Compile Include="crawler\spiders\hotelaah.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="crawler\spiders\Politician.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="crawler\spiders\TestingChinaVitae.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="crawler\spiders\TestingGubaspider.py" />
+    <Compile Include="crawler\spiders\TestingHotelaah.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="crawler\spiders\TestingUserInfo.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="crawler\spiders\TestingVippear.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="crawler\spiders\util.py" />

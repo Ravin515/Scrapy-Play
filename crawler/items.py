@@ -25,4 +25,9 @@ class PoliticianItem(Item):
     occupation  = Field()
     branch = Field()
     
-
+class HotelaahItem(Item):
+    province_name = Field()
+    city_name = Field()
+    leader_name = Field()
+    duration = Field()
+    tag = Field()

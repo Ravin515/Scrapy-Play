@@ -61,7 +61,7 @@ class CSVPipeline(object):
         return pipeline
 
     def spider_opened(self, spider):
-        self.file = open('Politician.csv', 'w+b')
+        self.file = open('scrt_info.csv', 'w+b')
         self.exporter = CsvItemExporter(self.file)
         self.exporter.start_exporting()
 
