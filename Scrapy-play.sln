@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TestingGuba", "TestingGuba.pyproj", "{4F53BFB7-FDDA-4A7B-9042-D2A187D6C132}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Calculation", "Calculation\Calculation.pyproj", "{AFA0CBD5-58F9-415D-B774-39F0D72F7F77}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +13,6 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4F53BFB7-FDDA-4A7B-9042-D2A187D6C132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4F53BFB7-FDDA-4A7B-9042-D2A187D6C132}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AFA0CBD5-58F9-415D-B774-39F0D72F7F77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AFA0CBD5-58F9-415D-B774-39F0D72F7F77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
