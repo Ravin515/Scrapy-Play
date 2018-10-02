@@ -17,8 +17,9 @@ NEWSPIDER_MODULE = 'crawler.spiders'
 LOG_FILE_GUBA = 'C:/Code/Testing/log-Guba.log'
 LOG_FILE_POLITICIAN = 'C:/Code/Testing/log-Politician.log'
 LOG_FILE_PIPELINE = 'C:/Code/Testing/log-Pipeline.log'
+LOG_FILE_CIT = 'C:/Code/Testing/log-Cit.log'
 PRINT_LOG = True
-LOG_LEVEL = 'DEBUG'
+LOG_LEVEL = 'INFO'
 LOG_FORMAT = '%(asctime)s [%(name)s] %(levelname)s: %(message)s'
 LOG_ENABLED = True
 LOG_STDOUT = True
@@ -51,7 +52,7 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 0.75
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -93,10 +94,10 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES =   {
-    #'crawler.pipelines.MongoPipeline': 300,
-    #'scrapy_redis.pipelines.RedisPipeline': 301,
+    'crawler.pipelines.MongoPipeline': 300,
+    'scrapy_redis.pipelines.RedisPipeline': 301,
       #'crawler.pipelines.JsonWriterPipeline': 300
-      'crawler.pipelines.CSVPipeline': 300
+      #'crawler.pipelines.CSVPipeline': 300
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

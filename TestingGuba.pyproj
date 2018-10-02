@@ -25,6 +25,9 @@
     <Compile Include="crawler\middlewares.py" />
     <Compile Include="crawler\pipelines.py" />
     <Compile Include="crawler\settings.py" />
+    <Compile Include="crawler\spiders\cit_info.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="crawler\spiders\hotelaah.py">
       <SubType>Code</SubType>
     </Compile>

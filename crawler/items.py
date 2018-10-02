@@ -31,3 +31,10 @@ class HotelaahItem(Item):
     leader_name = Field()
     duration = Field()
     tag = Field()
+
+class CitItem(Item):
+    inspt_title = Field()
+    inspt_tag = Field()
+    title = Field()
+    time = Field()
+    content = Field()
