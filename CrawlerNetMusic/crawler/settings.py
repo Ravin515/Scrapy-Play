@@ -5,19 +5,18 @@
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
 #
-#     http://doc.scrapy.org/en/latest/topics/settings.html
-#     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-#     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+#     https://doc.scrapy.org/en/latest/topics/settings.html
+#     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
+#     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'crawler_guba'
+BOT_NAME = 'crawler'
 
 SPIDER_MODULES = ['crawler.spiders']
 NEWSPIDER_MODULE = 'crawler.spiders'
 
-LOG_FILE_GUBA = 'C:/Code/Testing/log-Guba.log'
-LOG_FILE_POLITICIAN = 'C:/Code/Testing/log-Politician.log'
-LOG_FILE_PIPELINE = 'C:/Code/Testing/log-Pipeline.log'
-LOG_FILE_CIT = 'C:/Code/Testing/log-Cit.log'
+
+LOG_FILE_ARTIST = 'log-NetMusic.log'
+LOG_FILE_PIPELINE = 'log-Pipeline.log'
 PRINT_LOG = True
 LOG_LEVEL = 'INFO'
 LOG_FORMAT = '%(asctime)s [%(name)s] %(levelname)s: %(message)s'
@@ -123,7 +122,7 @@ ITEM_PIPELINES =   {
 
 MONGODB_HOST = 'localhost'
 MONGODB_PORT = 27017
-MONGODB_DBNAME = 'test'
+MONGODB_DBNAME = 'NetMusic'
 
 # Redis
 # Enables scheduling storing requests queue in redis.
@@ -144,7 +143,7 @@ MONGODB_DBNAME = 'test'
 # Don't cleanup redis queues, allows to pause/resume crawls.
 SCHEDULER_PERSIST = True
 #Whether to flush redis queue on start
-SCHEDULER_FLUSH_ON_START = True
+SCHEDULER_FLUSH_ON_START = False
 
 # Schedule requests using a priority queue. (default)
 #SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.PriorityQueue'

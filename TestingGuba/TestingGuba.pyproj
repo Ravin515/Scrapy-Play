@@ -34,6 +34,9 @@
     <Compile Include="crawler\spiders\Politician.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="crawler\spiders\soda_green.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="crawler\spiders\TestingChinaVitae.py">
       <SubType>Code</SubType>
     </Compile>
