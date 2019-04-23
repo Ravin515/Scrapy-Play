@@ -30,7 +30,7 @@
     <Compile Include="crawler\middlewares.py" />
     <Compile Include="crawler\pipelines.py" />
     <Compile Include="crawler\settings.py" />
-    <Compile Include="crawler\spiders\net_artist.py">
+    <Compile Include="crawler\spiders\artist_id.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="crawler\spiders\util.py" />

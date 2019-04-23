@@ -11,7 +11,7 @@ import copy
 import json
 
 class ArtistSpider(Spider):
-    name = 'net_artist'
+    name = 'artist_id'
     logger = util.set_logger(name, LOG_FILE_ARTIST)
 
 
@@ -23,21 +23,25 @@ class ArtistSpider(Spider):
             for initial in initials:
                 url = 'https://music.163.com/api/artist/list?cat={gid}&initial={initial}&limit=100'.\
                     format(gid = gid, initial = initial)
-                yield Request(url = url, callback = self.parse)
+                yield Request(url = copy.deepcopy(url), callback = self.parse)
 
     def parse(self, response):
         hxs = response.body.decode('utf-8')
         hxs = json.loads(hxs)
         item = NetItem()
         item['content'] = {}
-        if hxs['artists']:
-            for artist in hxs['artists']:
+        print(hxs)
+        artists = copy.deepcopy(hxs['artists'])
+        for artist in artists:
+            if artist['name']:
                 item['content']['name'] = artist['name']
+            if artist['id']:
                 item['content']['id'] = artist['id']
-                try:
-                    item['content']['account_id'] = artist['accountId']
-                except:
-                    item['content']['account_id'] = 'Null'
-                if artist['alias']:
-                    item['content']['alias'] = artist['alias']
-        yield item
+            try:
+                artist['accountId']
+                item['content']['account_id'] = artist['accountId']
+            except:
+                item['content']['account_id'] = "NULL"
+            if artist['alias']:
+                item['content']['alias'] = artist['alias']
+            yield item
