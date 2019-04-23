@@ -26,4 +26,4 @@ class RandomRequestHeaders(object):
         return cls(ua, ck)
 
     def process_request(self, request, spider):
-        request.headers.setdefault('User-Agent', random.choice(self.agents))       
+        request.headers.setdefault('User-Agent', random.choice(self.agents))

@@ -8,6 +8,5 @@
 import scrapy
 
 class NetItem(scrapy.Item):
-    content = scrapy.Field()
-    fp = scrapy.Field()
-    url = scrapy.Field()
+    artist_id = scrapy.Field()
+    artist_name = scrapy.Field()
