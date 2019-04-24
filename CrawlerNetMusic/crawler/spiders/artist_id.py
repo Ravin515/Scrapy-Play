@@ -12,6 +12,7 @@ import json
 from selenium import webdriver
 
 class ArtistSpider(Spider):
+    #custom_settings = {'CONCURRENT_REQUESTS', 1}
     name = 'artist_id'
     #allow_domains = ['music.163.com']
     logger = util.set_logger(name, LOG_FILE_ARTIST)
@@ -22,9 +23,7 @@ class ArtistSpider(Spider):
         for i in ls1:
             for j in ls2:
                 start_url = 'https://music.163.com/#/discover/artist/cat?id='+ str(i) + '&initial=' + str(j)
-                yield Request(url = start_url, callback = self.parse)
-        #start_url = 'https://music.163.com/#/discover/artist/cat?id=1001&initial=0'
-        #yield Request(url = start_url, callback = self.parse)
+                yield Request(url = start_url, callback = self.parse, dont_filter = True)
 
     def parse(self, response):
         item = NetItem()
@@ -37,11 +36,3 @@ class ArtistSpider(Spider):
             name = Selector(text = path).xpath('//a/text()').extract()[0]
             item['artist_name'] = name
             yield item
-
-        #names1 = response.xpath('//li[@class="sml"]/a[@class="nm nm-icn f-thide s-fc0"]').extract()
-        #for name in names1:
-        #    ids = Selector(text = name).xpath('//a/@href').extract()[0]
-        #    id = re.search("\?id=(.+)", ids).group(1)
-        #    item['content']['artist_id'] = id
-            
-                

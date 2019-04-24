@@ -32,7 +32,7 @@ class RandomRequestHeaders(object):
         request.headers.setdefault('User-Agent', random.choice(self.agents))       
 
 class IdMiddleware(object):
-    # 通过edge请求动态网页，代替scrapy的downloader
+    # 通过chrome请求动态网页，代替scrapy的downloader
 
     def process_request(self, request, spider):
         if spider.name == "artist_id":
