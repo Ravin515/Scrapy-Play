@@ -12,6 +12,7 @@ from scrapy import signals
 import json
 import logging
 from scrapy.exporters import CsvItemExporter
+from datetime import date
 
 
 class MongoPipeline(object):
@@ -52,7 +53,9 @@ class CSVPipeline(object):
         return pipeline
 
     def spider_opened(self, spider):
-        self.file = open('DTRank.csv', 'w+b')
+        system_date = date.today()
+        system_date = system_date.strftime('%Y-%m-%d') + ".csv"
+        self.file = open(system_date, 'w+b')
         self.exporter = CsvItemExporter(self.file)
         self.exporter.start_exporting()
 

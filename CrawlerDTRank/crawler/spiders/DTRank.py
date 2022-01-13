@@ -14,19 +14,12 @@ class DTRank(Spider):
     logger = util.set_logger(name, LOG_FILE_DTRank)
 
     def start_requests(self):
-        start_url = 'http://data.10jqka.com.cn/market/jgzy/field/enddate/order/desc/page/1'
-        yield Request(url = start_url, callback = self.parse)
+        page_num = 87
+        for i in range(0, page_num + 1):
+            urls = 'http://data.10jqka.com.cn/market/jgzy/field/enddate/order/desc/page/' + str(i)
+            yield Request(url = urls, callback = self.parse)
 
     def parse(self, response):
-        page_num = response.xpath('//span[@class = "page_info"]/text()').extract()[0]
-        page_num = page_num[2:None]
-        page_num = int(page_num)
-        for i in range(1, page_num + 1):
-            urls = 'http://data.10jqka.com.cn/market/jgzy/field/enddate/order/desc/page/' + str(i)
-            print(urls)
-            yield Request(url = urls, callback = self.parse_info)
-
-    def parse_info(self, response):
         paths = response.xpath('//tbody/tr').extract()
         item = DTRankItem()
         for path in paths:
