@@ -6,6 +6,7 @@ from crawler.spiders import util
 from crawler.items import MntItem
 import re
 from datetime import date
+from datetime import datetime
 class GBFuture(Spider):
     name = 'GBFuturetest'
     logger = util.set_logger(name, LOG_FILE_GBFuture)
@@ -45,6 +46,8 @@ class GBFuture(Spider):
             if post_tag_date == md:
                 try:
                     post_date = Selector(text = hx).xpath('//span[contains(@class, "l5")]/text()').extract()[0]
+                    post_date = str(date.today().year) + "-" + post_date            
+                    post_date = datetime.strptime(post_date, "%Y-%m-%d %H:%M")
                     item['content']['post_date'] = post_date
                 except:
                     pass

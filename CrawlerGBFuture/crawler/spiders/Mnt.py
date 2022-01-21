@@ -61,38 +61,37 @@ class GBFuture(Spider):
             if post_tag_date == md:
                 try:
                     post_date = Selector(text = hx).xpath('//span[contains(@class, "l5")]/text()').extract()[0]
-                    post_date = date.today().year + " " + post_date
-                    print(post_date)
+                    post_date = str(date.today().year) + "-" + post_date
                     post_date = datetime.strptime(post_date, "%Y-%m-%d %H:%M")
                     item['content']['post_date'] = post_date
                 except:
                     pass
-                # try:
-                #     post_title = Selector(text = hx).xpath('//span[contains(@class, "l3")]/a/@title').extract()[0]
-                #     item['content']['post_title'] = post_title
-                # except:
-                #     pass
-                # try:
-                #     reply_num = Selector(text = hx).xpath('//span[contains(@class, "l2")]/text()').extract()[0]
-                #     item['content']['reply_num'] = reply_num
-                # except:
-                #     pass
-                # try:
-                #     read_num = Selector(text = hx).xpath('//span[contains(@class, "l1")]/text()').extract()[0]
-                #     item['content']['read_num'] = read_num
-                # except:
-                #     pass
-                # try:
-                #     post_author = Selector(text = hx).xpath('//span[contains(@class, "l4")]/a[@target = "_blank"]/font/text()').extract()[0]
-                #     item['content']['post_author'] = post_author
-                # except:
-                #     pass
-                # try:
-                #     author_title = Selector(text = hx).xpath('//span[contains(@class, "l4")]/a/em/@title').extract()[0]
-                #     item['content']['author_title'] = author_title
-                # except:
-                #     pass
-                # yield item
+                try:
+                    post_title = Selector(text = hx).xpath('//span[contains(@class, "l3")]/a/@title').extract()[0]
+                    item['content']['post_title'] = post_title
+                except:
+                    pass
+                try:
+                    reply_num = Selector(text = hx).xpath('//span[contains(@class, "l2")]/text()').extract()[0]
+                    item['content']['reply_num'] = reply_num
+                except:
+                    pass
+                try:
+                    read_num = Selector(text = hx).xpath('//span[contains(@class, "l1")]/text()').extract()[0]
+                    item['content']['read_num'] = read_num
+                except:
+                    pass
+                try:
+                    post_author = Selector(text = hx).xpath('//span[contains(@class, "l4")]/a[@target = "_blank"]/font/text()').extract()[0]
+                    item['content']['post_author'] = post_author
+                except:
+                    pass
+                try:
+                    author_title = Selector(text = hx).xpath('//span[contains(@class, "l4")]/a/em/@title').extract()[0]
+                    item['content']['author_title'] = author_title
+                except:
+                    pass
+                yield item
 
 
 

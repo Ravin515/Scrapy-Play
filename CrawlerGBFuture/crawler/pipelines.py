@@ -13,10 +13,11 @@ import json
 import pymongo
 # import logging
 # from scrapy.exporters import CsvItemExporter
-# from datetime import date
+import datetime
+
 
 class GBFPipeline(object):
-    collection_name= 'post_info'
+    collection_name= f'{datetime.datetime.now().strftime("%Y%m%d")}'
     def __init__(self, mongo_uri, mongo_db):
         self.mongo_uri = mongo_uri
         self.mongo_db = mongo_db
