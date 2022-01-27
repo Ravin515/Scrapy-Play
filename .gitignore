@@ -6,10 +6,8 @@
 /CrawlerNetMusic/artist_id.csv
 /CrawlerNetMusic/chromedriver.exe
 CrawlerDTRank/data_analysis.ipynb
-CrawlerDTRank/data/2022-01-13.csv
-CrawlerDTRank/data/2022-01-14.csv
-CrawlerDTRank/data/2022-01-17.csv
-CrawlerDTRank/data/2022-01-18.csv
-CrawlerDTRank/data/2022-01-19.csv
-CrawlerDTRank/data/2022-01-20.csv
-CrawlerDTRank/data/2022-01-21.csv
+CrawlerDTRank/data/*.csv
+CrawlerDTRank/data/Trading
+CrawlerDTRank/data/TradingDev
+CrawlerDTRank/DTRank_analysis.csv
+CrawlerDTRank/DTRank.csv

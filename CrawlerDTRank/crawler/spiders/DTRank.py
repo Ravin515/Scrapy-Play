@@ -15,7 +15,7 @@ class DTRank(Spider):
 
     def start_requests(self):
         page_num = 87
-        for i in range(0, page_num + 1):
+        for i in range(1, page_num + 1):
             urls = 'http://data.10jqka.com.cn/market/jgzy/field/enddate/order/desc/page/' + str(i)
             yield Request(url = urls, callback = self.parse)
 

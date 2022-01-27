@@ -7,6 +7,7 @@ from crawler.items import MntItem
 import re
 from datetime import date
 from datetime import datetime
+
 class GBFuture(Spider):
     name = 'GBFuturetest'
     logger = util.set_logger(name, LOG_FILE_GBFuture)
