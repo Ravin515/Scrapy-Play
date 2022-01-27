@@ -5,9 +5,7 @@
 /CrawlerNetMusic/music163_artists_id.csv
 /CrawlerNetMusic/artist_id.csv
 /CrawlerNetMusic/chromedriver.exe
-CrawlerDTRank/data_analysis.ipynb
-CrawlerDTRank/data/*.csv
 CrawlerDTRank/data/Trading
 CrawlerDTRank/data/TradingDev
 CrawlerDTRank/DTRank_analysis.csv
-CrawlerDTRank/DTRank.csv
+
