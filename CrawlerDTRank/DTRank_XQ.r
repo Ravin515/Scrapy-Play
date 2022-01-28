@@ -1,4 +1,12 @@
 library(styleer)
+# DTRank <- fbread(pattern = "*.csv", encoding = "UTF-8")
+# DTRank <- DTRank[, file_id := NULL, 
+#     ][, unique(.SD)
+#     ][, stock_symbol := str_pad(stock_symbol, width = 6, side = "left", pad = "0")
+#     ][order(-date, stock_symbol), .SD
+#     ]
+
+# fwrite(DTRank, "DTRank.csv")
 trading <- fread("./CrawlerDTRank/TRD_Dalyr.txt", encoding = "UTF-8")
 setnames(trading, 1:2, c("stock_symbol", "date"))
 dtrank <- fread("./CrawlerDTRank/DTRank.csv", encoding = "UTF-8")
