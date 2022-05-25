@@ -12,4 +12,4 @@ CrawlerDTRank/DTRank_analysis.csv
 CrawlerGBFuture/crawls/storeMyRequest/requests.seen
 CrawlerGBFuture/crawls/storeMyRequest/spider.state
 CrawlerDTRank/TRD_Dalyr.txt
-CrawlerDTRank/data/*.csv
+
